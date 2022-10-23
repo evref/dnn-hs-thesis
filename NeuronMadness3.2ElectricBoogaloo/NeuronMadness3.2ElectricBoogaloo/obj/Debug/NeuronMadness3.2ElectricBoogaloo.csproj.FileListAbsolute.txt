@@ -1,0 +1,7 @@
+C:\Users\isakl\Source\Repos\NeuronMadness3.2ElectricBoogaloo\NeuronMadness3.2ElectricBoogaloo\obj\Debug\NeuronMadness3.2ElectricBoogaloo.csprojAssemblyReference.cache
+C:\Users\isakl\Source\Repos\NeuronMadness3.2ElectricBoogaloo\NeuronMadness3.2ElectricBoogaloo\obj\Debug\NeuronMadness3.2ElectricBoogaloo.csproj.CoreCompileInputs.cache
+C:\Users\isakl\Source\Repos\NeuronMadness3.2ElectricBoogaloo\NeuronMadness3.2ElectricBoogaloo\bin\Debug\NeuronMadness3.2ElectricBoogaloo.exe.config
+C:\Users\isakl\Source\Repos\NeuronMadness3.2ElectricBoogaloo\NeuronMadness3.2ElectricBoogaloo\bin\Debug\NeuronMadness3.2ElectricBoogaloo.exe
+C:\Users\isakl\Source\Repos\NeuronMadness3.2ElectricBoogaloo\NeuronMadness3.2ElectricBoogaloo\bin\Debug\NeuronMadness3.2ElectricBoogaloo.pdb
+C:\Users\isakl\Source\Repos\NeuronMadness3.2ElectricBoogaloo\NeuronMadness3.2ElectricBoogaloo\obj\Debug\NeuronMadness3.2ElectricBoogaloo.exe
+C:\Users\isakl\Source\Repos\NeuronMadness3.2ElectricBoogaloo\NeuronMadness3.2ElectricBoogaloo\obj\Debug\NeuronMadness3.2ElectricBoogaloo.pdb
