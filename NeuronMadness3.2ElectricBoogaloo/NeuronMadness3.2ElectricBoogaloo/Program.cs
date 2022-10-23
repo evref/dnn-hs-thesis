@@ -11,41 +11,41 @@ namespace NeuronMadness3._2ElectricBoogaloo
     {
         static void Main(string[] args)
         {
-            // Här kan du ändra både minibatch-storlekarna och seedet
-            // Problemet jag nämner senare appliceras på int-värdet i den här metoden
+            // Initialize the Training manager, takes minibatch-sizes and seed as inputs
             TrainingManager.Initialize(100, "seed");
 
-            // Här kan du ändra antalet gömda noder 
-            // Mellan första och sista kan du lägga till hur många lager du vill, du kommer dock märka att träningstiden inte kommer bli kortare av detta :)
-            // PS: Ändrar du input-lagret (784) eller output-lagret (10) så kommer nätverket sluta fungera
+            // Create a new neural network, input and output layers should always be the same size
+            // Example: (784, 16, 16, 10)
             NetData net = new NetData(784, 16, 16, 10);
 
-            // Slumpar fram ny startdata till nätverket (ändra seed för att få annorlunda)
+            // Randomize start data for the network
             NetManager.GenNewNetworkData(net);
 
             NetData trainedNet = net;
 
 
             // Här kan du välja att repetera inlärningsprocessen flera gånger vilket tenderar att leda till bättre resultat (fler epoker)
+
+            // Repeat the learning process, the variable i here is the number of epochs
             for (int i = 0; i < 1; i++)
             {
-                // Metoden som tränar nätverket på den givna datan
-                // Ifall nätverket redan finns kommer detta steget hoppas över då nätverket ändå hade slutat identiskt
-                // PS: Det är värt att notera att ovanstående påstående inte är helt sant då förändringar i träningsmetoden kan orsaka olikheter, detta är dessvärre en baksida med systemet
+                // Train the network on the data using the TrainingManager which we initialized earlier
+                // If a network with the same parameters already exist, the program will load that network instead and skip the training process
                 trainedNet = TrainingManager.Train(trainedNet, 1, true);
 
-                // Ger oss hur många procent rätt nätverket gissade
+                // Test the network on the test set of the data
                 float res = TrainingManager.Test(trainedNet, false);
 
 
+                // Print network accuracy
                 Console.SetCursorPosition(0, 10 + i);
-                Console.WriteLine("The net scored: {0}", res);
+                Console.WriteLine("The neural network scored: {0}% on the test data", res * 100);
                 Console.SetCursorPosition(0, 0);
             }
 
-            // Sparar nätverket till "data"-mappen
-            // Systemet sparar endast nätverk med olika seeds eller struktur (antal gömda lager, nodantal, osv.)
-            // Du kan ladda ett redan skapat nätverk genom att försöka skapa ett nätverk med samma struktur och seed som det nätverk du försöker ladda
+            // Saves the net to the "data" folder
+            // The system only keeps track of networks with differing seeds and artificial neuron structures
+            // An already saved net can be loaded by trying to train a network with the same parameters, which will load the existing one instead
             trainedNet.Save();
 
             Console.ReadLine();
